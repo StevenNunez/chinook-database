@@ -1,0 +1,14 @@
+version: '3'
+
+volumes:
+  db-chinook-data:
+    external: true
+
+services:
+  db-chinook:
+    build: .
+    volumes:
+      - db-chinook-data:/var/lib/postgresql/data
+    ports:
+      - '127.0.0.1:5432:5432'
+
